@@ -5,259 +5,407 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>WBS</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .content-box {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .many {
+            width: 75%;
+        }
+
+        .stage-card {
+
+            padding: 10px;
+            font-weight: bold;
+            border: 3px solid #35c4cf;
+            border-radius: 10px;
+        }
+
+        .dotted-row {
+            display: flex;
+
+            flex-wrap: wrap;
+            border: 3px dashed #fed7c5;
+            margin: 10px 0;
+            padding: 10px;
+
+        }
+
+        .data-testid {
+            text-align: center;
+        }
+
+        .text {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .pill {
+            background-color: #a8cdcf;
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 50px;
+            width: auto;
+            cursor: grab;
+            /*transition-duration: 50ms;
+    transition-delay: 1ms;
+    transition-timing-function: ease;
+
+    transition:  max-width 1s;*/
+
+        }
+
+        .text:hover,
+        .pill:hover {
+            max-width: 100%;
+            width: auto;
+            cursor: hand;
+
+            white-space: normal;
+            overflow: visible;
+            text-overflow: initial;
+        }
+
+
+        .flag {
+            color: #fb8b54;
+            padding: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            align-self: center;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <div id="wbs-container"></div>-->
-
+    <a href="">
+        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
+            class="octicon octicon-mark-github v-align-middle">
+            <path
+                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+            </path>
+        </svg>
+    </a>
     <div class="container">
-        <!--<div class="content-box">
-            <div class="row">
-                <div class="stage-card">Produto de Projeto</div>
-                <div class="dotted-row">
-                    <div class="pill" data-testid="1">1 Torneio do MUSC</div>
-                </div>
-                <div class="flag">Nivel 0</div>
-            </div>
-
-            <div class="row">
-                <div class="stage-card">Fases de Ciclo de vida</div>
-                <div class="dotted-row">
-                    <div class="pill" data-testid="1.1">1.1 Planejamento e organização do torneio</div>
-                    <div class="pill" data-testid="1.2">1.2 Execução do torneio</div>
-                    <div class="pill" data-testid="1.3">1.3 Encerramento e avaliação do torneio</div>
-                </div>
-                <div class="flag">Nivel 1</div>
-            </div>
-
-            <div class="row">
-                <div class="stage-card">Componentes</div>
-                <div class="many">
-                    <div class="dotted-row">
-                        <div class="pill" data-testid="1.1.1">1.1.1 Definição do escopo do torneio</div>
-                        <div class="pill" data-testid="1.1.2">1.1.2 Identificação dos recursos necessários</div>
-                        <div class="pill" data-testid="1.1.3">1.1.3 Elaboração do cronograma do torneio</div>
-                        <div class="pill" data-testid="1.1.4">1.1.4 Estabelecimento do orçamento do torneio</div>
-                        <div class="pill" data-testid="1.1.5">1.1.5 Definição dos critérios de seleção dos times
-                            participantes</div>
-
-                    </div>
-                    <div class="dotted-row">
-                        <div class="pill" data-testid="1.1.4.1">1.1.4.1 Reserva de campos e instalações necessárias
-                        </div>
-                        <div class="pill" data-testid="1.1.4.2">1.1.4.2 Contratação de árbitros qualificados</div>
-                        <div class="pill" data-testid="1.1.4.3">1.1.4.3 Contratação do artista para criação do design
-                            exclusivo do torneio
-                        </div>
-
-                        <div class="pill" data-testid="1.1.4.4">1.1.4.4 Planejamento e execução da venda de produtos
-                            promocionais</div>
-                        <div class="pill" data-testid="1.1.4.5">1.1.4.5 Determinação da taxa de inscrição</div>
-                        <div class="pill" data-testid="1.1.4.6">1.1.4.6 Busca de patrocínio de empresas locais</div>
-
-
-                    </div>
-                </div>
-
-                <div class="flag">Nivel 2</div>
-            </div>
-        </div>-->
     </div>
 
-
     <script>
-        // Estrutura da EAP em formato JSON
-        var eap = {
-            "name": "Torneio de Verão MUSC",
-            "deliverables": [
-                {
-                    "name": "Produto de Projeto",
-                    "sub_deliverables": [
-                        {
-                            "name": "1 Torneio do MUSC"
-                        }
-                    ]
-                },
-                {
-                    "name": "Fases de Ciclo de vida",
-                    "sub_deliverables": [
-                        {
-                            "name": "1.1 Planejamento e organização do torneio"
-                        },
-                        {
-                            "name": "1.2 Execução do torneio"
-                        },
-                        {
-                            "name": "1.3 Encerramento e avaliação do torneio"
-                        }
-                    ]
-                },
-                {
-                    "name": "Componentes",
-                    "sub_deliverables": [
-                        {
-                            "name": "1.1 Planejamento e organização do torneio"
-                        },
-                        {
-                            "name": "1.2 Execução do torneio"
-                        },
-                        {
-                            "name": "1.3 Encerramento e avaliação do torneio"
-                        }
-                    ]
-                },
 
-                /*
+        const containerData = {
+            "container": [
+                {
+                    "content-box": [
+                        {
+                            "row": [
                                 {
-                                    "name": "Planejamento e organização do torneio",
-                                    "sub_deliverables": [
+                                    "stage-card": "Produto de Projeto"
+                                },
+                                {
+                                    "dotted-row": [
                                         {
-                                            "name": "Definição do escopo do torneio"
-                                        },
-                                        {
-                                            "name": "Identificação dos recursos necessários"
-                                        },
-                                        {
-                                            "name": "Elaboração do cronograma do torneio"
-                                        },
-                                        {
-                                            "name": "Estabelecimento do orçamento do torneio"
-                                        },
-                                        {
-                                            "name": "Contratação de árbitros qualificados"
-                                        },
-                                        {
-                                            "name": "Reserva de campos e instalações necessárias"
-                                        },
-                                        {
-                                            "name": "Definição dos critérios de seleção dos times participantes"
-                                        },
-                                        {
-                                            "name": "Determinação da taxa de inscrição"
-                                        },
-                                        {
-                                            "name": "Busca de patrocínio de empresas locais"
-                                        },
-                                        {
-                                            "name": "Planejamento e execução da venda de produtos promocionais"
-                                        },
-                                        {
-                                            "name": "Contratação do artista para criação do design exclusivo do torneio"
+                                            "pill": {
+                                                "data-testid": "1",
+                                                "text": "Torneio do MUSC"
+                                            }
                                         }
                                     ]
                                 },
                                 {
-                                    "name": "Execução do torneio",
-                                    "sub_deliverables": [
+                                    "flag": "Nivel 0"
+                                }
+                            ]
+                        },
+                        {
+                            "row": [
+                                {
+                                    "stage-card": "Fases de Ciclo de vida"
+                                },
+                                {
+                                    "dotted-row": [
                                         {
-                                            "name": "Preparação das instalações para o torneio"
+                                            "pill": {
+                                                "data-testid": "1.1",
+                                                "text": "Planejamento e organização do torneio"
+                                            }
                                         },
                                         {
-                                            "name": "Recebimento e registro das equipes participantes"
+                                            "pill": {
+                                                "data-testid": "1.2",
+                                                "text": "Execução do torneio"
+                                            }
                                         },
                                         {
-                                            "name": "Coordenação das partidas e horários"
-                                        },
-                                        {
-                                            "name": "Gerenciamento dos árbitros e da arbitragem das partidas"
-                                        },
-                                        {
-                                            "name": "Fornecimento de suporte e informações aos times participantes e ao público"
-                                        },
-                                        {
-                                            "name": "Gerenciamento das atividades de alimentação e bebidas durante o torneio"
-                                        },
-                                        {
-                                            "name": "Monitoramento das condições climáticas e planos de contingência"
-                                        },
-                                        {
-                                            "name": "Gerenciamento de possíveis problemas e conflitos durante o torneio"
+                                            "pill": {
+                                                "data-testid": "1.3",
+                                                "text": "Encerramento e avaliação do torneio"
+                                            }
                                         }
                                     ]
                                 },
                                 {
-                                    "name": "Encerramento e avaliação do torneio",
-                                    "sub_deliverables": [
+                                    "flag": "Nivel 1"
+                                }
+                            ]
+                        },
+                        {
+                            "row": [
+                                {
+                                    "stage-card": "Componentes"
+                                },
+                                {
+                                    "many": [
                                         {
-                                            "name": "Realização da cerimônia de premiação"
+                                            "dotted-row": [
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.1",
+                                                        "text": "Definição do escopo do torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.2",
+                                                        "text": "Identificação dos recursos necessários"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.3",
+                                                        "text": "Elaboração do cronograma do torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4",
+                                                        "text": "Estabelecimento do orçamento do torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.5",
+                                                        "text": "Definição dos critérios de seleção dos times participantes"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.1",
+                                                        "text": "Preparação das instalações para o torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.2",
+                                                        "text": "Recebimento e registro das equipes participantes"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.3",
+                                                        "text": "Coordenação das partidas e horários"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.4",
+                                                        "text": "Gerenciamentos de Qualidade"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.5",
+                                                        "text": "Monitoramento das condições climáticas e planos de contingência"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.1",
+                                                        "text": "Realização da cerimônia de premiação"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.2",
+                                                        "text": "Avaliações e Análises Finais"
+                                                    }
+                                                },
+
+
+                                            ]
                                         },
                                         {
-                                            "name": "Coleta de feedback dos participantes"
-                                        },
-                                        {
-                                            "name": "Avaliação do desempenho do torneio em relação aos objetivos estabelecidos"
-                                        },
-                                        {
-                                            "name": "Análise financeira do torneio"
-                                        },
-                                        {
-                                            "name": "Preparação de relatório de encerramento e recomendações para futuros torneios"
+                                            "dotted-row": [
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.1",
+                                                        "text": "Reserva de campos e instalações necessárias"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.2",
+                                                        "text": "Contratação de árbitros qualificados"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.3",
+                                                        "text": "Contratação do artista para criação do design exclusivo do torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.4",
+                                                        "text": "1.1.4.4 Planejamento e execução da venda de produtos promocionais"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.5",
+                                                        "text": "1.1.4.5 Determinação da taxa de inscrição"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.1.4.6",
+                                                        "text": "1.1.4.6 Busca de patrocínio de empresas locais"
+                                                    }
+                                                },
+
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.4.1",
+                                                        "text": "Gerenciamento dos árbitros e da arbitragem das partidas"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.4.2",
+                                                        "text": "Gerenciamento das atividades de alimentação e bebidas durante o torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.2.4.3",
+                                                        "text": "Gerenciamento de possíveis problemas e conflitos durante o torneio"
+                                                    }
+                                                },
+
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.1.1",
+                                                        "text": "Coleta de feedback dos participantes"
+                                                    }
+                                                },
+
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.2.1",
+                                                        "text": "Avaliação do desempenho do torneio em relação aos objetivos estabelecidos"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.2.2",
+                                                        "text": "Análise financeira do torneio"
+                                                    }
+                                                },
+                                                {
+                                                    "pill": {
+                                                        "data-testid": "1.3.2.3",
+                                                        "text": "Preparação de relatório de encerramento e recomendações para futuros torneios"
+                                                    }
+                                                },
+                                            ]
                                         }
                                     ]
-                                }*/
+                                },
+                                {
+                                    "flag": "Nivel 2"
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         };
+        // Obtém a referência ao contêiner
+        const container = document.querySelector('.container');
 
-        function populateEAPStructure() {
-            var container = document.querySelector('.container');
+        // Função recursiva para criar elementos HTML
+        function createElements(data, parentElement) {
+            data.forEach(item => {
+                Object.keys(item).forEach(key => {
+                    const element = document.createElement('div');
+                    element.classList.add(key);
 
-            // Cria a div content-box
-            var contentBox = document.createElement('div');
-            contentBox.className = 'content-box';
+                    const value = item[key];
 
-            // Percorre os elementos do array deliverables
-            for (var i = 0; i < eap.deliverables.length; i++) {
-                var deliverable = eap.deliverables[i];
+                    if (typeof value === 'string') {
+                        element.textContent = value;
+                    } else if (Array.isArray(value)) {
+                        createElements(value, element);
+                    } else if (typeof value === 'object') {
+                        Object.keys(value).forEach(childKey => {
+                            const childElement = document.createElement('div');
+                            childElement.classList.add(childKey);
 
-                // Cria a div row
-                var row = document.createElement('div');
-                row.className = 'row';
+                            const childValue = value[childKey];
 
-                // Cria a div stage-card e adiciona o nome do deliverable
-                var stageCard = document.createElement('div');
-                stageCard.className = 'stage-card';
-                stageCard.textContent = deliverable.name;
-                row.appendChild(stageCard);
+                            if (typeof childValue === 'string') {
+                                childElement.textContent = childValue;
+                                childElement.setAttribute('data-testid', childValue);
+                            } else if (typeof childValue === 'object') {
+                                const pillElement = document.createElement('div');
+                                pillElement.classList.add('pill');
 
-                // Cria a div dotted-row
-                var dottedRow = document.createElement('div');
-                dottedRow.className = 'dotted-row';
+                                const testDataId = childValue['data-testid'];
+                                //if (testDataId) {
+                                pillElement.setAttribute('data-testid', testDataId);
+                                //}
 
-                // Percorre os elementos do array sub_deliverables
-                for (var j = 0; j < deliverable.sub_deliverables.length; j++) {
-                    var subDeliverable = deliverable.sub_deliverables[j];
+                                //const text = childValue['text'];
+                                //if (text) {
+                                //pillElement.textContent = text;
+                                //    pillElement.setAttribute('data-testid', 'ok');
+                                //}
 
-                    // Cria a div pill e adiciona o nome do sub_deliverable
-                    var pill = document.createElement('div');
-                    pill.className = 'pill';
-                    pill.dataset.testid = (i + 1) + '.' + (j + 1);
-                    pill.textContent = (i + 1) + '.' + (j + 1) + ' ' + subDeliverable.name;
-                    dottedRow.appendChild(pill);
-                }
+                                //childElement.appendChild(pillElement);
+                            }
 
-                // Adiciona a div dotted-row à div row
-                row.appendChild(dottedRow);
+                            element.appendChild(childElement);
+                        });
+                    }
 
-                // Cria a div flag e adiciona o nível
-                var flag = document.createElement('div');
-                flag.className = 'flag';
-                flag.textContent = 'Nivel ' + i;
-                row.appendChild(flag);
-
-                // Adiciona a div row à div content-box
-                contentBox.appendChild(row);
-            }
-
-            // Adiciona a div content-box à div container
-            container.appendChild(contentBox);
+                    parentElement.appendChild(element);
+                });
+            });
         }
 
-        // Chama a função para popular a estrutura
-        populateEAPStructure();
-    </script>
 
+        // Chama a função para criar os elementos no contêiner
+        createElements(containerData.container, container);
+
+    </script>
 
 
 
@@ -265,15 +413,16 @@
     <script>
         // Armazene as referências dos elementos SVG criados
         const svgs = [];
-        function conectarDivs(from, to) {
+        function conectarDivs(from, to, color) {
             // Obtenha as divs
             const div1 = document.querySelector(from)//'.pill[data-testid="1"]');
             const div2 = document.querySelector(to)//'.pill[data-testid="1.1"]');
 
             // Obtenha as coordenadas de cada div
             const rect1 = div1.getBoundingClientRect();
-            console.table([rect1])
+
             const rect2 = div2.getBoundingClientRect();
+
 
 
             // Crie o SVG com as coordenadas relativas
@@ -281,14 +430,29 @@
             svg.setAttribute('width', '100%');
             svg.setAttribute('height', '100%');
 
+            // define the arrow (marker)
+            const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+            marker.setAttribute('id', 'arrow');
+            marker.setAttribute('markerWidth', '10');
+            marker.setAttribute('markerHeight', '10');
+            marker.setAttribute('refX', '8');
+            marker.setAttribute('refY', '3');
+            marker.setAttribute('orient', 'auto');
+            const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            arrowPath.setAttribute('d', 'M0,0 L0,6 L9,3 z');
+            arrowPath.setAttribute('fill', color);
+            marker.appendChild(arrowPath);
+            svg.appendChild(marker);
+
+            // define the line
             const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
             line.setAttribute('x1', rect1.left + rect1.width / 2);
-            line.setAttribute('y1', (rect1.top + rect1.height / 2) + 10);
+            line.setAttribute('y1', (rect1.top + rect1.height / 2) + 32);
             line.setAttribute('x2', rect2.left + rect2.width / 2);
-            line.setAttribute('y2', (rect2.top + rect2.height / 2) - 10);
-            line.setAttribute('stroke', 'black');
-
-
+            line.setAttribute('y2', (rect2.top + rect2.height / 2) - 15);
+            line.setAttribute('stroke', color);//stroke-width="10"
+            line.setAttribute('stroke-width', '2');
+            line.setAttribute('marker-end', 'url(#arrow)');
             svg.appendChild(line);
 
             // Adicione o SVG à página
@@ -301,14 +465,8 @@
             container.style.height = '100%';
             container.style.pointerEvents = 'none';
             container.style.zIndex = '9999';
-
-
-
-
             container.appendChild(svg);
-
             document.body.appendChild(container);
-
             // Armazene a referência do elemento SVG na lista
             svgs.push(svg);
         }
@@ -325,22 +483,43 @@
         function recalculate() {
             removerSvgs();
             // Chame a função para conectar as divs
-            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.1"]');
-            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.2"]');
-            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.3"]');
+            conectarDivs('.data-testid[data-testid="1"]', '.data-testid[data-testid="1.1"]', '#35c4cf');
+            conectarDivs('.data-testid[data-testid="1"]', '.data-testid[data-testid="1.2"]', '#35c4cf');
+            conectarDivs('.data-testid[data-testid="1"]', '.data-testid[data-testid="1.3"]', '#35c4cf');
 
-            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.1"]');
-            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.2"]');
-            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.3"]');
-            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.4"]');
-            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.5"]');
+            conectarDivs('.data-testid[data-testid="1.1"]', '.data-testid[data-testid="1.1.1"]', '#ADFF2F');
+            conectarDivs('.data-testid[data-testid="1.1"]', '.data-testid[data-testid="1.1.2"]', '#ADFF2F');
+            conectarDivs('.data-testid[data-testid="1.1"]', '.data-testid[data-testid="1.1.3"]', '#ADFF2F');
+            conectarDivs('.data-testid[data-testid="1.1"]', '.data-testid[data-testid="1.1.4"]', '#ADFF2F');
+            conectarDivs('.data-testid[data-testid="1.1"]', '.data-testid[data-testid="1.1.5"]', '#ADFF2F');
 
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.1"]');
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.2"]');
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.3"]');
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.4"]');
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.5"]');
-            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.6"]');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.1"]', '#A7F432');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.2"]', '#A7F432');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.3"]', '#A7F432');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.4"]', '#A7F432');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.5"]', '#A7F432');
+            conectarDivs('.data-testid[data-testid="1.1.4"]', '.data-testid[data-testid="1.1.4.6"]', '#A7F432');
+
+            conectarDivs('.data-testid[data-testid="1.2"]', '.data-testid[data-testid="1.2.1"]', '#0000DD');
+            conectarDivs('.data-testid[data-testid="1.2"]', '.data-testid[data-testid="1.2.2"]', '#0000DD');
+            conectarDivs('.data-testid[data-testid="1.2"]', '.data-testid[data-testid="1.2.3"]', '#0000DD');
+            conectarDivs('.data-testid[data-testid="1.2"]', '.data-testid[data-testid="1.2.4"]', '#0000DD');
+            conectarDivs('.data-testid[data-testid="1.2"]', '.data-testid[data-testid="1.2.5"]', '#0000DD');
+
+
+            conectarDivs('.data-testid[data-testid="1.2.4"]', '.data-testid[data-testid="1.2.4.1"]', '#248EFF');
+            conectarDivs('.data-testid[data-testid="1.2.4"]', '.data-testid[data-testid="1.2.4.2"]', '#248EFF');
+            conectarDivs('.data-testid[data-testid="1.2.4"]', '.data-testid[data-testid="1.2.4.3"]', '#248EFF');
+
+            conectarDivs('.data-testid[data-testid="1.3"]', '.data-testid[data-testid="1.3.1"]', '#DC143C');
+            conectarDivs('.data-testid[data-testid="1.3"]', '.data-testid[data-testid="1.3.2"]', '#DC143C');
+
+
+            conectarDivs('.data-testid[data-testid="1.3.1"]', '.data-testid[data-testid="1.3.1.1"]', '#DC143C');
+            conectarDivs('.data-testid[data-testid="1.3.2"]', '.data-testid[data-testid="1.3.2.1"]', '#DC143C');
+            conectarDivs('.data-testid[data-testid="1.3.2"]', '.data-testid[data-testid="1.3.2.2"]', '#DC143C');
+            conectarDivs('.data-testid[data-testid="1.3.2"]', '.data-testid[data-testid="1.3.2.3"]', '#DC143C');
+
         }
         recalculate()
 

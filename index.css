@@ -52,9 +52,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100px;
+    max-width: 50px;
     width: auto;
-    
+    cursor: grab;
     /*transition-duration: 50ms;
     transition-delay: 1ms;
     transition-timing-function: ease;
@@ -66,6 +66,7 @@
 .pill:hover {
     max-width: 100%;
     width: auto;
+    cursor: hand;
 
     white-space: normal;
     overflow: visible;
