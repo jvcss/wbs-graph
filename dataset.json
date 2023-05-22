@@ -1,0 +1,148 @@
+{
+  "container": [
+    {
+      "content-box": [
+        {
+          "row": [
+            {
+              "stage-card": "Produto de Projeto"
+            },
+            {
+              "dotted-row": [
+                {
+                  "pill": {
+                    "data-testid": "1",
+                    "text": "1 Torneio do MUSC"
+                  }
+                }
+              ]
+            },
+            {
+              "flag": "Nivel 0"
+            }
+          ]
+        },
+        {
+          "row": [
+            {
+              "stage-card": "Fases de Ciclo de vida"
+            },
+            {
+              "dotted-row": [
+                {
+                  "pill": {
+                    "data-testid": "1.1",
+                    "text": "1.1 Planejamento e organização do torneio"
+                  }
+                },
+                {
+                  "pill": {
+                    "data-testid": "1.2",
+                    "text": "1.2 Execução do torneio"
+                  }
+                },
+                {
+                  "pill": {
+                    "data-testid": "1.3",
+                    "text": "1.3 Encerramento e avaliação do torneio"
+                  }
+                }
+              ]
+            },
+            {
+              "flag": "Nivel 1"
+            }
+          ]
+        },
+        {
+          "row": [
+            {
+              "stage-card": "Componentes"
+            },
+            {
+              "many": [
+                {
+                  "dotted-row": [
+                    {
+                      "pill": {
+                        "data-testid": "1.1.1",
+                        "text": "1.1.1 Definição do escopo do torneio"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.2",
+                        "text": "1.1.2 Identificação dos recursos necessários"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.3",
+                        "text": "1.1.3 Elaboração do cronograma do torneio"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4",
+                        "text": "1.1.4 Estabelecimento do orçamento do torneio"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.5",
+                        "text": "1.1.5 Definição dos critérios de seleção dos times participantes"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "dotted-row": [
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.1",
+                        "text": "1.1.4.1 Reserva de campos e instalações necessárias"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.2",
+                        "text": "1.1.4.2 Contratação de árbitros qualificados"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.3",
+                        "text": "1.1.4.3 Contratação do artista para criação do design exclusivo do torneio"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.4",
+                        "text": "1.1.4.4 Planejamento e execução da venda de produtos promocionais"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.5",
+                        "text": "1.1.4.5 Determinação da taxa de inscrição"
+                      }
+                    },
+                    {
+                      "pill": {
+                        "data-testid": "1.1.4.6",
+                        "text": "1.1.4.6 Busca de patrocínio de empresas locais"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "flag": "Nivel 2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

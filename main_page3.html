@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>WBS</title>
+</head>
+
+<body>
+    <!-- <div id="wbs-container"></div>-->
+
+    <div class="container">
+        <!--<div class="content-box">
+            <div class="row">
+                <div class="stage-card">Produto de Projeto</div>
+                <div class="dotted-row">
+                    <div class="pill" data-testid="1">1 Torneio do MUSC</div>
+                </div>
+                <div class="flag">Nivel 0</div>
+            </div>
+
+            <div class="row">
+                <div class="stage-card">Fases de Ciclo de vida</div>
+                <div class="dotted-row">
+                    <div class="pill" data-testid="1.1">1.1 Planejamento e organização do torneio</div>
+                    <div class="pill" data-testid="1.2">1.2 Execução do torneio</div>
+                    <div class="pill" data-testid="1.3">1.3 Encerramento e avaliação do torneio</div>
+                </div>
+                <div class="flag">Nivel 1</div>
+            </div>
+
+            <div class="row">
+                <div class="stage-card">Componentes</div>
+                <div class="many">
+                    <div class="dotted-row">
+                        <div class="pill" data-testid="1.1.1">1.1.1 Definição do escopo do torneio</div>
+                        <div class="pill" data-testid="1.1.2">1.1.2 Identificação dos recursos necessários</div>
+                        <div class="pill" data-testid="1.1.3">1.1.3 Elaboração do cronograma do torneio</div>
+                        <div class="pill" data-testid="1.1.4">1.1.4 Estabelecimento do orçamento do torneio</div>
+                        <div class="pill" data-testid="1.1.5">1.1.5 Definição dos critérios de seleção dos times
+                            participantes</div>
+
+                    </div>
+                    <div class="dotted-row">
+                        <div class="pill" data-testid="1.1.4.1">1.1.4.1 Reserva de campos e instalações necessárias
+                        </div>
+                        <div class="pill" data-testid="1.1.4.2">1.1.4.2 Contratação de árbitros qualificados</div>
+                        <div class="pill" data-testid="1.1.4.3">1.1.4.3 Contratação do artista para criação do design
+                            exclusivo do torneio
+                        </div>
+
+                        <div class="pill" data-testid="1.1.4.4">1.1.4.4 Planejamento e execução da venda de produtos
+                            promocionais</div>
+                        <div class="pill" data-testid="1.1.4.5">1.1.4.5 Determinação da taxa de inscrição</div>
+                        <div class="pill" data-testid="1.1.4.6">1.1.4.6 Busca de patrocínio de empresas locais</div>
+
+
+                    </div>
+                </div>
+
+                <div class="flag">Nivel 2</div>
+            </div>
+        </div>-->
+    </div>
+
+
+    <script>
+        // Estrutura da EAP em formato JSON
+        var eap = {
+            "name": "Torneio de Verão MUSC",
+            "deliverables": [
+                {
+                    "name": "Produto de Projeto",
+                    "sub_deliverables": [
+                        {
+                            "name": "1 Torneio do MUSC"
+                        }
+                    ]
+                },
+                {
+                    "name": "Fases de Ciclo de vida",
+                    "sub_deliverables": [
+                        {
+                            "name": "1.1 Planejamento e organização do torneio"
+                        },
+                        {
+                            "name": "1.2 Execução do torneio"
+                        },
+                        {
+                            "name": "1.3 Encerramento e avaliação do torneio"
+                        }
+                    ]
+                },
+                {
+                    "name": "Componentes",
+                    "sub_deliverables": [
+                        {
+                            "name": "1.1 Planejamento e organização do torneio"
+                        },
+                        {
+                            "name": "1.2 Execução do torneio"
+                        },
+                        {
+                            "name": "1.3 Encerramento e avaliação do torneio"
+                        }
+                    ]
+                },
+
+                /*
+                                {
+                                    "name": "Planejamento e organização do torneio",
+                                    "sub_deliverables": [
+                                        {
+                                            "name": "Definição do escopo do torneio"
+                                        },
+                                        {
+                                            "name": "Identificação dos recursos necessários"
+                                        },
+                                        {
+                                            "name": "Elaboração do cronograma do torneio"
+                                        },
+                                        {
+                                            "name": "Estabelecimento do orçamento do torneio"
+                                        },
+                                        {
+                                            "name": "Contratação de árbitros qualificados"
+                                        },
+                                        {
+                                            "name": "Reserva de campos e instalações necessárias"
+                                        },
+                                        {
+                                            "name": "Definição dos critérios de seleção dos times participantes"
+                                        },
+                                        {
+                                            "name": "Determinação da taxa de inscrição"
+                                        },
+                                        {
+                                            "name": "Busca de patrocínio de empresas locais"
+                                        },
+                                        {
+                                            "name": "Planejamento e execução da venda de produtos promocionais"
+                                        },
+                                        {
+                                            "name": "Contratação do artista para criação do design exclusivo do torneio"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Execução do torneio",
+                                    "sub_deliverables": [
+                                        {
+                                            "name": "Preparação das instalações para o torneio"
+                                        },
+                                        {
+                                            "name": "Recebimento e registro das equipes participantes"
+                                        },
+                                        {
+                                            "name": "Coordenação das partidas e horários"
+                                        },
+                                        {
+                                            "name": "Gerenciamento dos árbitros e da arbitragem das partidas"
+                                        },
+                                        {
+                                            "name": "Fornecimento de suporte e informações aos times participantes e ao público"
+                                        },
+                                        {
+                                            "name": "Gerenciamento das atividades de alimentação e bebidas durante o torneio"
+                                        },
+                                        {
+                                            "name": "Monitoramento das condições climáticas e planos de contingência"
+                                        },
+                                        {
+                                            "name": "Gerenciamento de possíveis problemas e conflitos durante o torneio"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Encerramento e avaliação do torneio",
+                                    "sub_deliverables": [
+                                        {
+                                            "name": "Realização da cerimônia de premiação"
+                                        },
+                                        {
+                                            "name": "Coleta de feedback dos participantes"
+                                        },
+                                        {
+                                            "name": "Avaliação do desempenho do torneio em relação aos objetivos estabelecidos"
+                                        },
+                                        {
+                                            "name": "Análise financeira do torneio"
+                                        },
+                                        {
+                                            "name": "Preparação de relatório de encerramento e recomendações para futuros torneios"
+                                        }
+                                    ]
+                                }*/
+            ]
+        };
+
+        function populateEAPStructure() {
+            var container = document.querySelector('.container');
+
+            // Cria a div content-box
+            var contentBox = document.createElement('div');
+            contentBox.className = 'content-box';
+
+            // Percorre os elementos do array deliverables
+            for (var i = 0; i < eap.deliverables.length; i++) {
+                var deliverable = eap.deliverables[i];
+
+                // Cria a div row
+                var row = document.createElement('div');
+                row.className = 'row';
+
+                // Cria a div stage-card e adiciona o nome do deliverable
+                var stageCard = document.createElement('div');
+                stageCard.className = 'stage-card';
+                stageCard.textContent = deliverable.name;
+                row.appendChild(stageCard);
+
+                // Cria a div dotted-row
+                var dottedRow = document.createElement('div');
+                dottedRow.className = 'dotted-row';
+
+                // Percorre os elementos do array sub_deliverables
+                for (var j = 0; j < deliverable.sub_deliverables.length; j++) {
+                    var subDeliverable = deliverable.sub_deliverables[j];
+
+                    // Cria a div pill e adiciona o nome do sub_deliverable
+                    var pill = document.createElement('div');
+                    pill.className = 'pill';
+                    pill.dataset.testid = (i + 1) + '.' + (j + 1);
+                    pill.textContent = (i + 1) + '.' + (j + 1) + ' ' + subDeliverable.name;
+                    dottedRow.appendChild(pill);
+                }
+
+                // Adiciona a div dotted-row à div row
+                row.appendChild(dottedRow);
+
+                // Cria a div flag e adiciona o nível
+                var flag = document.createElement('div');
+                flag.className = 'flag';
+                flag.textContent = 'Nivel ' + i;
+                row.appendChild(flag);
+
+                // Adiciona a div row à div content-box
+                contentBox.appendChild(row);
+            }
+
+            // Adiciona a div content-box à div container
+            container.appendChild(contentBox);
+        }
+
+        // Chama a função para popular a estrutura
+        populateEAPStructure();
+    </script>
+
+
+
+
+
+    <script>
+        // Armazene as referências dos elementos SVG criados
+        const svgs = [];
+        function conectarDivs(from, to) {
+            // Obtenha as divs
+            const div1 = document.querySelector(from)//'.pill[data-testid="1"]');
+            const div2 = document.querySelector(to)//'.pill[data-testid="1.1"]');
+
+            // Obtenha as coordenadas de cada div
+            const rect1 = div1.getBoundingClientRect();
+            console.table([rect1])
+            const rect2 = div2.getBoundingClientRect();
+
+
+            // Crie o SVG com as coordenadas relativas
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', '100%');
+
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', rect1.left + rect1.width / 2);
+            line.setAttribute('y1', (rect1.top + rect1.height / 2) + 10);
+            line.setAttribute('x2', rect2.left + rect2.width / 2);
+            line.setAttribute('y2', (rect2.top + rect2.height / 2) - 10);
+            line.setAttribute('stroke', 'black');
+
+
+            svg.appendChild(line);
+
+            // Adicione o SVG à página
+            const container = document.createElement('div');
+            // Adicione as propriedades CSS ao container
+            container.style.position = 'fixed';
+            container.style.top = '0';
+            container.style.left = '0';
+            container.style.width = '100%';
+            container.style.height = '100%';
+            container.style.pointerEvents = 'none';
+            container.style.zIndex = '9999';
+
+
+
+
+            container.appendChild(svg);
+
+            document.body.appendChild(container);
+
+            // Armazene a referência do elemento SVG na lista
+            svgs.push(svg);
+        }
+        function removerSvgs() {
+            // Remova cada elemento SVG da página
+            svgs.forEach((svg) => {
+                svg.parentNode.removeChild(svg);
+            });
+
+            // Limpe a lista de referências dos elementos SVG
+            svgs.length = 0;
+        }
+
+        function recalculate() {
+            removerSvgs();
+            // Chame a função para conectar as divs
+            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.1"]');
+            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.2"]');
+            conectarDivs('.pill[data-testid="1"]', '.pill[data-testid="1.3"]');
+
+            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.1"]');
+            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.2"]');
+            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.3"]');
+            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.4"]');
+            conectarDivs('.pill[data-testid="1.1"]', '.pill[data-testid="1.1.5"]');
+
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.1"]');
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.2"]');
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.3"]');
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.4"]');
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.5"]');
+            conectarDivs('.pill[data-testid="1.1.4"]', '.pill[data-testid="1.1.4.6"]');
+        }
+        recalculate()
+
+        // Adicione o event listener de hover a todos os elementos .pill
+        const pills = document.querySelectorAll('.pill');
+        pills.forEach((pill) => {
+            pill.addEventListener('mouseover', recalculate);
+            pill.addEventListener('mouseout', recalculate);
+        });
+    </script>
+</body>
+
+</html>
